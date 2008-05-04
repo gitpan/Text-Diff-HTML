@@ -1,13 +1,13 @@
 package Text::Diff::HTML;
 
-# $Id: HTML.pm 1932 2005-08-08 17:17:03Z theory $
+# $Id: HTML.pm 3747 2008-05-04 02:07:59Z david $
 
 use strict;
 use vars qw(@ISA $VERSION);
 use HTML::Entities;
 use Text::Diff (); # Just to be safe.
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 @ISA = qw(Text::Diff::Unified);
 
 sub file_header {
@@ -157,7 +157,7 @@ This element immediately follows the opening "file" C<< <div> >> element.
 =item * C<< <div class="hunk"> >>
 
 This element contains a single diff "hunk". Each hunk may contain the
-following C<< <span> >> elements:
+following elements:
 
 =over
 
@@ -211,9 +211,14 @@ want to wrap the output of your diff a C<< <pre> >> element.
 
 =back
 
-=head1 Bugs
+=head1 Support
 
-Please send bug reports to <bug-text-diff-html@rt.cpan.org>.
+This module is stored in an open repository at the following address:
+
+L<https://svn.kineticode.com/Text-Diff-HTML/trunk/>
+
+Patches against SVN::Notify are welcome. Please send bug reports to
+<bug-text-diff-html@rt.cpan.org>.
 
 =head1 Author
 
@@ -230,7 +235,7 @@ David Wheeler <david@kineticode.com>
 
 =head1 Copyright and License
 
-Copyright (c) 2005 Kineticode, Inc. All Rights Reserved.
+Copyright (c) 2005-2008 Kineticode, Inc. Some Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under the
 same terms as Perl itself.
