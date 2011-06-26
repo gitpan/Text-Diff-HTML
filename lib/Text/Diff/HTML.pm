@@ -1,13 +1,11 @@
 package Text::Diff::HTML;
 
-# $Id: HTML.pm 4658 2009-04-07 16:12:46Z david $
-
 use strict;
 use vars qw(@ISA $VERSION);
 use HTML::Entities;
 use Text::Diff (); # Just to be safe.
 
-$VERSION = '0.06';
+$VERSION = '0.07';
 @ISA = qw(Text::Diff::Unified);
 
 sub file_header {
@@ -96,17 +94,6 @@ __END__
 
 ##############################################################################
 
-=begin comment
-
-Fake-out Module::Build. Delete if it ever changes to support =head1 headers
-other than all uppercase.
-
-=head1 NAME
-
-Text::Diff::HTML - XHTML format for Text::Diff::Unified
-
-=end comment
-
 =head1 Name
 
 Text::Diff::HTML - XHTML format for Text::Diff::Unified
@@ -125,16 +112,15 @@ Text::Diff::HTML - XHTML format for Text::Diff::Unified
 =head1 Description
 
 This class subclasses Text::Diff::Unified, a formatting class provided by the
-L<Text::Diff|Text::Diff> module, to add XHTML markup to the unified diff
-format. For details on the interface of the C<diff()> function, see the
-L<Text::Diff|Text::Diff> documentation.
+L<Text::Diff> module, to add XHTML markup to the unified diff format. For
+details on the interface of the C<diff()> function, see the L<Text::Diff>
+documentation.
 
 In the XHTML formatted by this module, the contents of the diff returned by
 C<diff()> are wrapped in a C<< <div> >> element, as is each hunk of the diff.
 Within each hunk, all content is properly HTML encoded using
-L<HTML::Entities|HTML::Entities>, and the various sections of the diff are
-marked up with the appropriate XHTML elements. The elements used are as
-follows:
+L<HTML::Entities>, and the various sections of the diff are marked up with the
+appropriate XHTML elements. The elements used are as follows:
 
 =over
 
@@ -206,37 +192,29 @@ do) styled with "white-space: pre".
 
 =over
 
-=item L<Text::Diff|Text::Diff>
+=item L<Text::Diff>
 
-=item L<Algorithm::Diff|Algorithm::Diff>
+=item L<Algorithm::Diff>
 
 =back
 
 =head1 Support
 
-This module is stored in an open repository at the following address:
+This module is stored in an open L<GitHub
+repository|http://github.com/theory/text-diff-html/>. Feel free to fork and
+contribute!
 
-L<https://svn.kineticode.com/Text-Diff-HTML/trunk/>
-
-Patches against Text::Diff::HTML are welcome. Please send bug reports to
-<bug-text-diff-html@rt.cpan.org>.
+Please file bug reports via L<GitHub
+Issues|http://github.com/theory/text-diff-html/issues/> or by sending mail to
+L<bug-Text-Diff-HTML@rt.cpan.org|mailto:bug-Text-Diff-HTML@rt.cpan.org>.
 
 =head1 Author
 
-=begin comment
-
-Fake-out Module::Build. Delete if it ever changes to support =head1 headers
-other than all uppercase.
-
-=head1 AUTHOR
-
-=end comment
-
-David Wheeler <david@kineticode.com>
+David E. Wheeler <david@justatheory.com>
 
 =head1 Copyright and License
 
-Copyright (c) 2005-2009 Kineticode, Inc. Some Rights Reserved.
+Copyright (c) 2005-2011 David E. Wheeler. Some Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under the
 same terms as Perl itself.
